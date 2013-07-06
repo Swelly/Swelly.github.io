@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Blog | Web Fu]]></title>
+  <link href="http://Swelly.github.io/blog/categories/blog/atom.xml" rel="self"/>
+  <link href="http://Swelly.github.io/"/>
+  <updated>2013-07-06T01:30:10-04:00</updated>
+  <id>http://Swelly.github.io/</id>
+  <author>
+    <name><![CDATA[Wesley Carr]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Tweaking it]]></title>
+    <link href="http://Swelly.github.io/blog/2013/07/06/tweaking-it/"/>
+    <updated>2013-07-06T00:55:00-04:00</updated>
+    <id>http://Swelly.github.io/blog/2013/07/06/tweaking-it</id>
+    <content type="html"><![CDATA[<p>Not a long post here, but I wanted to note my progress on the layout &amp; customization of this here Octopress dubbed: <strong>Web Fu</strong>. Obviously the title has changed (previously the captivating &ldquo;<em>My Octopress Blog&rdquo;</em>), but I&rsquo;ve imported Google Fonts as well to add some custom spice to my life. Honestly though, as if the people at Gizoogle didn&rsquo;t impress me enough&hellip; their font-directory over at <a href = "https://www.google.com/fonts"> Google Fonts </a> is ridiculously good-looking.</p>
+
+<h5>A quick note and +1 to Google is their release of <a href="http://www.google.com/flights">Google Flights</a>. It rivals the international app <a href="http://Skyscanner.net">Skyscanner</a> and provides a clean interface when selecting cheaper air-fare. It looks as though Google&rsquo;s acquisition of ITASoftware back in 2010 has finally paid off. Here&rsquo;s a link to the Matrix database ITA created <a href="http://http://matrix.itasoftware.com">http://matrix.itasoftware.com</a></h5>
+
+<p>Anyways, I&rsquo;m looking to style this theme a bit more before next week once my class dives into the Rails framework. So in the meantime, I&rsquo;m going to browse through some themes and of course… stay on the path towards enightenment with Ruby Koans</p>
+
+<p><img src="/images/Koans.png" title="auto auto &lsquo;Don&rsquo;t Lose Hope&rsquo;" ></p>
+]]></content>
+  </entry>
+  
+</feed>
