@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: API | My Octopress Blog]]></title>
+  <title><![CDATA[Category: API | Web Fu]]></title>
   <link href="http://Swelly.github.io/blog/categories/api/atom.xml" rel="self"/>
   <link href="http://Swelly.github.io/"/>
-  <updated>2013-07-06T00:30:22-04:00</updated>
+  <updated>2013-07-06T00:32:37-04:00</updated>
   <id>http://Swelly.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Wesley Carr]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
