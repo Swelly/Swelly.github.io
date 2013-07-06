@@ -4,7 +4,7 @@
   <title><![CDATA[Web Fu]]></title>
   <link href="http://Swelly.github.io/atom.xml" rel="self"/>
   <link href="http://Swelly.github.io/"/>
-  <updated>2013-07-06T01:30:10-04:00</updated>
+  <updated>2013-07-06T01:45:56-04:00</updated>
   <id>http://Swelly.github.io/</id>
   <author>
     <name><![CDATA[Wesley Carr]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Musk is The man]]></title>
+    <link href="http://Swelly.github.io/blog/2013/07/06/musk-is-the-man/"/>
+    <updated>2013-07-06T01:35:00-04:00</updated>
+    <id>http://Swelly.github.io/blog/2013/07/06/musk-is-the-man</id>
+    <content type="html"><![CDATA[<blockquote><p>Latest vertical landing rocket vid. 325M altitude, hold against wind, land w T/W&gt;1, radar in loop.</p><footer><strong>@elonmusk</strong> <cite><a href='https://twitter.com/elonmusk/statuses/353309492131278848'>twitter.com/elonmusk/statuses/&hellip;</a></cite></footer></blockquote>
+
+
+<iframe width="560" height="315" src="http://Swelly.github.io//www.youtube.com/embed/eGimzB5QM1M" frameborder="0" allowfullscreen></iframe>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Tweaking it]]></title>
