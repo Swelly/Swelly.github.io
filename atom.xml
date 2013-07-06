@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://Swelly.github.io/atom.xml" rel="self"/>
   <link href="http://Swelly.github.io/"/>
-  <updated>2013-07-05T17:55:58-04:00</updated>
+  <updated>2013-07-05T23:08:24-04:00</updated>
   <id>http://Swelly.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -18,9 +18,9 @@
     <link href="http://Swelly.github.io/blog/2013/07/05/active-record/"/>
     <updated>2013-07-05T11:30:00-04:00</updated>
     <id>http://Swelly.github.io/blog/2013/07/05/active-record</id>
-    <content type="html"><![CDATA[<h1>Week 3 Day 5</h1>
+    <content type="html"><![CDATA[<h2>Week 3 Day 5</h2>
 
-<p>Over the past two days we have been assigned a homework project involving the Sunlight API Gem. Sunlight <a href="https://github.com/sunlightlabs/ruby-sunlight" title="Sunlight">Sunlight on Github</a> provides various methods for obtaining information on members of congress, legislator IDs, and &lsquo;look-ups&rsquo; between places and the politicians that represent them. Our project involved the latter search method. By providing the user with a search form, a zipcode can be passed in which is then routed to (using Sinatra). Here is an example of the search method we used to GET the politicians (or legislators) from Sunlight and present them on another page.</p>
+<p>Over the past two days we were assigned a homework project involving the Sunlight API Gem. <a href="https://github.com/sunlightlabs/ruby-sunlight" title="Sunlight">Sunlight</a> provides various methods for obtaining information on members of congress, legislator IDs, and &lsquo;look-ups&rsquo; between places and the politicians that represent them. The project involved the latter search method. By providing the user with a search form, a zipcode is entered and then routed to (using Sinatra). Here is an example of the search method we used to GET the politicians from Sunlight and present them on another page:</p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -37,7 +37,9 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>From that page (erb :politicians_in_zipcode) we were encouraged to add the ability to favorite or like certain politicians and then list them back on the index page where the search form exists. In addition to a like button, each poltician&rsquo;s party is identified by their parties color. Democrat = blue, Republican = red and Independent = purple.</p>
+<p>From that page (erb :politicians_in_zipcode) we were encouraged to add the ability to favorite or like certain politicians and then list them back on the index page where the search form exists. In addition to a like button, each poltician&rsquo;s party is identified by their parties color.</p>
+
+<p>Democrat = Blue | Republican = Red | Independent = Purple</p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -62,10 +64,17 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>An example from my home zipcode yields only democracts. So, in order to display the working code I used 11209, an area code assigned to Brooklyn, NY.
-<img src="http://Swelly.github.io/Sites/images/Policoder_11209.png" title="[300px] [auto] [Brooklyn Zips]" >
-The highest difficulty I experienced in building this app was adding selected politicians to a &ldquo;liked&rdquo; list (essentially passing them into the ActiveRecord Database) while retaining the information provided by Sunlight. For accessiblity purposes, the form entry for liking a politician requires the press of a button. Here is the form used:</p>
+<p><img class="right" src="http://Swelly.github.io/images/Brooklyn.png" width="400" height="350" title="'Brooklyn_ZipCode'" ></p>
 
+<p>An example from my home zipcode yields only members of the Democratic party. So, in order to display the working color code I used 11209, an area code assigned to Brooklyn, NY.
+The highest difficulty I experienced in building this app was adding selected politicians to a &#8220;liked&#8221; list (essentially passing them into the ActiveRecord Database) while retaining the information provided by Sunlight. For accessiblity purposes, the form entry for liking a politician requires the press of a button. Here is the form I made:
+</p>
+
+
+
+
+<p>
+  
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -76,8 +85,10 @@ The highest difficulty I experienced in building this app was adding selected po
 </span><span class='line'>  <span class="nt">&lt;/form&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
+</p>
 
-<p>  What occurs when the user presses the Like button, is a transfer of the value: person.votesmart_id (unique ID to each politician) to the POST method in main.rb:</p>
+
+<p>What occurs when the user presses the Like button, is a transfer of the value :person.votesmart_id (unique ID assigned to politicians) to the POST method in main.rb-</p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -112,13 +123,14 @@ The highest difficulty I experienced in building this app was adding selected po
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>This calls for a minor adjustment to the index &lsquo;/&rsquo; page in order to display all the liked politicians. By writing &lsquo;@politicians = Politicians.all&rsquo; the liked politicians will be listed below the search form.
-The above code was relatively challenging for me. I was constantly running into a PG error (database error) which could not find a politicians class. Although I still don&rsquo;t know entirely why it occured, it was explained to me that the error resided in my migration file. When creating a new entry into my &ldquo;:politician&rdquo; table &lsquo;create_table :politician do |t|&rsquo;, ActiveRecord was looking for a &ldquo;:politician<em>s</em>&rdquo; table. Meaning it should have been plural all along. I hope to learn why the table must be plural, but either way it&rsquo;s obviously crucial to be hyper-aware of the syntax when creating a migration file. As of right now, the app is up and running.</p>
+<p>This calls for a minor adjustment to the index page in order to display all the &lsquo;liked&rsquo; politicians. By writing <code>@politicians = Politicians.all</code> the liked politicians will be listed below the search form.
+The code displayed above was relatively challenging for me. I was constantly running into a Postgres error (database error) which could not find a <code>politicians</code> class. Although I am still unsure why it occured, it was explained to me that the error resided in my migration file. When creating a new entry into my &ldquo;:politician&rdquo; table &lsquo;create_table :politician do |t|&rsquo;, ActiveRecord was looking for a :politician<em>s</em> table. Meaning it should have been plural all along. I hope to learn why the table must be plural, but either way it&rsquo;s obviously crucial to be hyper-aware of the syntax when creating a migration file. As of right now, the app is up and running.</p>
 
-<p>GitHub link- <a href="https://github.com/Swelly/sunlight" title="Sunlight - Swelly">My Sunlight repo</a>
-Screenshots:
-<img src="http://Swelly.github.io/Sites/images/Index.png" alt="Index_Page" />
-<img src="http://Swelly.github.io/Sites/images/19803.png" alt="Home_Code" /></p>
+<p>Index Screenshot:</p>
+
+<p><img class="inline" src="http://Swelly.github.io/images/Web.png" title="auto auto 'Web Browser'" ></p>
+
+<p>GitHub link- <a href="https://github.com/Swelly/sunlight" title="Sunlight - Swelly">Here</a></p>
 ]]></content>
   </entry>
   
