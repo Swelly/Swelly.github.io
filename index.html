@@ -150,6 +150,8 @@
   <div class="entry-content"><p>Quick post here. After trying for hours to customize some third party themes to this Octopress, I&rsquo;d made a mess out of my source files. So I went into the terminal and typed <code>Rake-T</code> to see if there was any quick way about removing old files and clearing the sass cache. There was and it&rsquo;s simple enough: <code>rake clean</code>. Running that command did exactly what I&rsquo;d hope it would and I saw this <img class="inline" src="/images/gitrm.png" title="auto auto 'Terminal output'" > lovely trash bin of sorts waiting to be removed from GitHub. Only I didn&rsquo;t know how to remove the rubbish.</p>
 
 <p>I tried <code>git rm .</code> (thought of the opposite of <code>git add .</code>) but rm . was attempting to remove hidden files. Not the right move. A quick search came up with- <code>git rm $(git ls-files &mdash;deleted)</code> and presto, they&rsquo;re correctly taken from git hub. The command might be different from Windows users, but fortunately it worked for me and I&rsquo;ll continue to use it after I clean out the sass cache.</p>
+
+<p>Side note- My theme is broken right now, but I&rsquo;ll have it fixed by tomorrow. I tried to install and customize <a href="https://github.com/sevenadrian/foxslide" title="Foxslide">FoxSlide</a> but the customization is a bit over my head at the moment. So much sass&hellip;</p>
 </div>
   
   
