@@ -4,7 +4,7 @@
   <title><![CDATA[Web Fu]]></title>
   <link href="http://Swelly.github.io/atom.xml" rel="self"/>
   <link href="http://Swelly.github.io/"/>
-  <updated>2013-07-07T22:25:06-04:00</updated>
+  <updated>2013-07-09T10:05:01-04:00</updated>
   <id>http://Swelly.github.io/</id>
   <author>
     <name><![CDATA[Wesley Carr]]></name>
@@ -12,6 +12,52 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Running Rails]]></title>
+    <link href="http://Swelly.github.io/blog/2013/07/09/running-rails/"/>
+    <updated>2013-07-09T09:09:00-04:00</updated>
+    <id>http://Swelly.github.io/blog/2013/07/09/running-rails</id>
+    <content type="html"><![CDATA[<p>Our homework assignment for last night [7.8.2013] was to make our first Rails app. The requirements were basically to make a To-Do application using Ruby, Rails and Active record.</p>
+
+
+
+
+<p>I had to leave earlier during class (had to withdraw my rent, like the adult that I am), but I was relatively comfortable with the commands to get a Rails app up-and-running.</p>
+
+
+<h4>The App &lsquo;story&rsquo;:</h4>
+
+<ul>
+  <li>Create Todo</li>
+  <li>View all Todos</li>
+  <li>Link all pages</li>
+  <li>Edit & Delete Todos</li>
+</ul>
+
+
+<h4>Tools:</h4>
+
+<ul>
+  <li>Ruby</li>
+  <li>Active Record</li>
+  <li>**Rails**
+  <ul>
+    <li>Model</li>
+    <li>Views</li>
+    <li>*Routes*
+    <ul>
+    <li>rake db:migrate</li>
+    <li>config/routes.rb</li>
+    <li>rake routes</li>
+</ul>
+</ul>
+</ul>
+
+
+<p><img class="right" src="http://Swelly.github.io/images/Web_app.gif" title="auto auto 'Web-App'" ></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Got Git]]></title>

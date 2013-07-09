@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Homework | Web Fu]]></title>
   <link href="http://Swelly.github.io/blog/categories/homework/atom.xml" rel="self"/>
   <link href="http://Swelly.github.io/"/>
-  <updated>2013-07-09T10:01:16-04:00</updated>
+  <updated>2013-07-09T10:05:01-04:00</updated>
   <id>http://Swelly.github.io/</id>
   <author>
     <name><![CDATA[Wesley Carr]]></name>
@@ -55,7 +55,7 @@
 </ul>
 
 
-<p>{% img right /images/Web_app.gif auto auto &lsquo;Web-App&rsquo; %}</p>
+<p><img class="right" src="/images/Web_app.gif" title="auto auto &lsquo;Web-App&rsquo;" ></p>
 ]]></content>
   </entry>
   

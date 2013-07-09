@@ -4,7 +4,7 @@
   <title><![CDATA[Category: inspiration, | Web Fu]]></title>
   <link href="http://Swelly.github.io/blog/categories/inspiration/atom.xml" rel="self"/>
   <link href="http://Swelly.github.io/"/>
-  <updated>2013-07-09T10:01:16-04:00</updated>
+  <updated>2013-07-09T10:05:01-04:00</updated>
   <id>http://Swelly.github.io/</id>
   <author>
     <name><![CDATA[Wesley Carr]]></name>
@@ -18,9 +18,7 @@
     <link href="http://Swelly.github.io/blog/2013/07/06/musk-is-the-man/"/>
     <updated>2013-07-06T01:35:00-04:00</updated>
     <id>http://Swelly.github.io/blog/2013/07/06/musk-is-the-man</id>
-    <content type="html"><![CDATA[<p>{% blockquote @elonmusk <a href="https://twitter.com/elonmusk/statuses/353309492131278848">https://twitter.com/elonmusk/statuses/353309492131278848</a> %}
-Latest vertical landing rocket vid. 325M altitude, hold against wind, land w T/W&gt;1, radar in loop.
-{% endblockquote %}</p>
+    <content type="html"><![CDATA[<p><blockquote><p>Latest vertical landing rocket vid. 325M altitude, hold against wind, land w T/W&gt;1, radar in loop.</p><footer><strong>@elonmusk <a href="https://twitter.com/elonmusk/statuses/353309492131278848">https://twitter.com/elonmusk/statuses/353309492131278848</a></strong></footer></blockquote></p>
 
 <iframe width="auto" height="auto" src="http://Swelly.github.io//www.youtube.com/embed/eGimzB5QM1M" frameborder="0" allowfullscreen></iframe>
 
