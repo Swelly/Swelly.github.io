@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: WDI, | Web Fu]]></title>
-  <link href="http://Swelly.github.io/blog/categories/wdi/atom.xml" rel="self"/>
+  <title><![CDATA[Category: App, | Web Fu]]></title>
+  <link href="http://Swelly.github.io/blog/categories/app/atom.xml" rel="self"/>
   <link href="http://Swelly.github.io/"/>
   <updated>2013-07-09T10:01:16-04:00</updated>
   <id>http://Swelly.github.io/</id>

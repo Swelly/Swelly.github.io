@@ -4,7 +4,7 @@
   <title><![CDATA[Category: API | Web Fu]]></title>
   <link href="http://Swelly.github.io/blog/categories/api/atom.xml" rel="self"/>
   <link href="http://Swelly.github.io/"/>
-  <updated>2013-07-07T22:25:06-04:00</updated>
+  <updated>2013-07-09T10:01:16-04:00</updated>
   <id>http://Swelly.github.io/</id>
   <author>
     <name><![CDATA[Wesley Carr]]></name>
@@ -21,53 +21,34 @@
     <content type="html"><![CDATA[<h2>Week 3 Day 5</h2>
 
 <p>Over the past two days we were assigned a homework project involving the Sunlight API Gem. <a href="https://github.com/sunlightlabs/ruby-sunlight" title="Sunlight">Sunlight</a> provides various methods for obtaining information on members of congress, legislator IDs, and &lsquo;look-ups&rsquo; between places and the politicians that represent them. The project involved the latter search method. By providing the user with a search form, a zipcode is entered and then routed to (using Sinatra). Here is an example of the search method we used to GET the politicians from Sunlight and present them on another page:
-<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">get</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">/</span><span class="ss">:zipcode</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="k">do</span>
-</span><span class='line'>  <span class="vi">@zipcode</span> <span class="o">=</span> <span class="n">params</span><span class="o">[</span><span class="ss">:zipcode</span><span class="o">]</span>
-</span><span class='line'>  <span class="c1">#Defining instance variable with Sunlight app</span>
-</span><span class='line'>  <span class="vi">@politicians</span> <span class="o">=</span> <span class="ss">Sunlight</span><span class="p">:</span><span class="ss">:Legislator</span><span class="o">.</span><span class="n">all_in_zipcode</span><span class="p">(</span><span class="vi">@zipcode</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">erb</span> <span class="ss">:politicians_in_zipcode</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock lang:ruby %}
+get &lsquo;/:zipcode&rsquo; do
+  @zipcode = params[:zipcode]
+  #Defining instance variable with Sunlight app
+  @politicians = Sunlight::Legislator.all_in_zipcode(@zipcode)
+  erb :politicians_in_zipcode
+end
+{% endcodeblock %}
 From that page (erb :politicians_in_zipcode) we were encouraged to add the ability to favorite or like certain politicians and then list them back on the index page where the search form exists. In addition to a like button, each poltician&rsquo;s party is identified by their parties color.</p>
 
 <p>Democrat = Blue | Republican = Red | Independent = Purple
-<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'>  <span class="ni">&amp;lt;</span>%color = <span class="ni">&amp;lsquo;</span>#9A2EFE<span class="ni">&amp;rsquo;</span>%&gt;<span class="nt">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span>  <span class="ni">&amp;lt;</span>% if party == &quot;D&quot; %<span class="ni">&amp;gt;</span>
-</span><span class='line'>    <span class="ni">&amp;lt;</span>% color = &#39;#2E64FE&#39; %<span class="ni">&amp;gt;</span>
-</span><span class='line'>  <span class="ni">&amp;lt;</span>% elsif party == &quot;R&quot; %<span class="ni">&amp;gt;</span>
-</span><span class='line'>    <span class="ni">&amp;lt;</span>% color = &#39;#FE2E2E&#39; %<span class="ni">&amp;gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="ni">&amp;lt;</span>% end %<span class="ni">&amp;gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="ni">&amp;lt;</span>h3 style = &quot;color: <span class="ni">&amp;lt;</span>%=color%<span class="ni">&amp;gt;</span>&quot;<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="ni">&amp;lt;</span>%=person.firstname%<span class="ni">&amp;gt;</span> <span class="ni">&amp;lt;</span>%=person.lastname%<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock lang:html %}
+  &lt;%color = &lsquo;#9A2EFE&rsquo;%></p>
 
-<p><img class="right" src="/images/Brooklyn.png" width="400" height="350" title="&lsquo;Brooklyn_ZipCode&rsquo;" ></p>
+<pre><code>  &lt;% if party == "D" %&gt;
+    &lt;% color = '#2E64FE' %&gt;
+  &lt;% elsif party == "R" %&gt;
+    &lt;% color = '#FE2E2E' %&gt;
+
+&lt;% end %&gt;
+
+&lt;h3 style = "color: &lt;%=color%&gt;"&gt;
+&lt;%=person.firstname%&gt; &lt;%=person.lastname%&gt;
+</code></pre>
+
+<p>{% endcodeblock %}</p>
+
+<p>{% img right /images/Brooklyn.png 400 350 &lsquo;Brooklyn_ZipCode&rsquo; %}</p>
 
 <p>An example from my home zipcode yields only members of the Democratic party. So, in order to display the working color code I used 11209, an area code assigned to Brooklyn, NY.
 The highest difficulty I experienced in building this app was adding selected politicians to a "liked" list (essentially passing them into the ActiveRecord Database) while retaining the information provided by Sunlight. For accessiblity purposes, the form entry for liking a politician requires the press of a button. Here is the form I made:
@@ -77,67 +58,43 @@ The highest difficulty I experienced in building this app was adding selected po
 
 
 <p><p>
-  <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'>  <span class="nt">&lt;form</span> <span class="na">action =</span><span class="err"> </span><span class="s">&#39;/like&#39;</span> <span class="na">method =</span><span class="err"> </span><span class="s">&#39;post&#39;</span><span class="nt">&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>input type = &quot;hidden&quot; name = &quot;votesmart_id&quot; value=&quot;<span class="ni">&amp;lt;</span>%= person.votesmart_id%<span class="ni">&amp;gt;</span>&quot;<span class="ni">&amp;gt;</span>
-</span><span class='line'>  <span class="ni">&amp;lt;</span>button<span class="ni">&amp;gt;</span> Like <span class="ni">&amp;lt;</span>/button<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;</span>  <span class="nt">&lt;/form&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+  {% codeblock lang:html %}
+  <form action = '/like' method = 'post'></p>
+
+<pre><code>&lt;input type = "hidden" name = "votesmart_id" value="&lt;%= person.votesmart_id%&gt;"&gt;
+  &lt;button&gt; Like &lt;/button&gt;
+</code></pre>
+
+<p>  </form>
+{% endcodeblock %}
 </p>
 What occurs when the user presses the Like button, is a transfer of the value :person.votesmart_id (unique ID assigned to politicians) to the POST method in main.rb-
-  <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="n">post</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="o">/</span><span class="n">like</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span> <span class="k">do</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;liked = Sunlight::Legislator.all_where(:votesmart_id =&amp;gt; params[:votesmart_id]).first</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">Politicians.create(</span>
-</span><span class='line'><span class="sr">                :firstname =&amp;gt; liked.firstname,</span>
-</span><span class='line'><span class="sr">                :lastname =&amp;gt; liked.lastname,</span>
-</span><span class='line'><span class="sr">                :party =&amp;gt; liked.party,</span>
-</span><span class='line'><span class="sr">                :state =&amp;gt; liked.state,</span>
-</span><span class='line'><span class="sr">                :twitter_id =&amp;gt; liked.twitter_id,</span>
-</span><span class='line'><span class="sr">                :in_office =&amp;gt; liked.in_office,</span>
-</span><span class='line'><span class="sr">                :votesmart_id =&amp;gt; liked.votesmart_id</span>
-</span><span class='line'><span class="sr">                )</span>
-</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  redirect to(&amp;lsquo;/</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;)</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+  {% codeblock lang:ruby %}
+  post &lsquo;/like&rsquo; do</p>
+
+<pre><code>liked = Sunlight::Legislator.all_where(:votesmart_id =&gt; params[:votesmart_id]).first
+
+Politicians.create(
+                :firstname =&gt; liked.firstname,
+                :lastname =&gt; liked.lastname,
+                :party =&gt; liked.party,
+                :state =&gt; liked.state,
+                :twitter_id =&gt; liked.twitter_id,
+                :in_office =&gt; liked.in_office,
+                :votesmart_id =&gt; liked.votesmart_id
+                )
+</code></pre>
+
+<p>  redirect to(&lsquo;/&rsquo;)
+  end
+  {% endcodeblock %}</p>
 
 <p>This calls for a minor adjustment to the index page in order to display all the &lsquo;liked&rsquo; politicians. By writing <code>@politicians = Politicians.all</code> the liked politicians will be listed below the search form.
 The code displayed above was relatively challenging for me. I was constantly running into a Postgres error (database error) which could not find a <code>politicians</code> class. Although I am still unsure why it occured, it was explained to me that the error resided in my migration file. When creating a new entry into my &ldquo;:politician&rdquo; table &lsquo;create_table :politician do |t|&rsquo;, ActiveRecord was looking for a :politician<em>s</em> table. Meaning it should have been plural all along. I hope to learn why the table must be plural, but either way it&rsquo;s obviously crucial to be hyper-aware of the syntax when creating a migration file. As of right now, the app is up and running.</p>
 
 <p>Index Screenshot:</p>
 
-<p><img class="inline" src="/images/Web.png" title="auto auto &lsquo;Web Browser&rsquo;" ></p>
+<p>{% img inline /images/Web.png auto auto &lsquo;Web Browser&rsquo; %}</p>
 
 <p>GitHub link- <a href="https://github.com/Swelly/sunlight" title="Sunlight - Swelly">Here</a></p>
 ]]></content>
