@@ -4,7 +4,7 @@
   <title><![CDATA[Category: API | Web Fu]]></title>
   <link href="http://Swelly.github.io/blog/categories/api/atom.xml" rel="self"/>
   <link href="http://Swelly.github.io/"/>
-  <updated>2013-07-09T10:05:01-04:00</updated>
+  <updated>2013-07-13T21:27:33-04:00</updated>
   <id>http://Swelly.github.io/</id>
   <author>
     <name><![CDATA[Wesley Carr]]></name>
@@ -12,6 +12,53 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Making an App - Insta-Outside]]></title>
+    <link href="http://Swelly.github.io/blog/2013/07/13/making-an-app-insta-outside/"/>
+    <updated>2013-07-13T19:10:00-04:00</updated>
+    <id>http://Swelly.github.io/blog/2013/07/13/making-an-app-insta-outside</id>
+    <content type="html"><![CDATA[<p><img class="<a" src="href="https://lh5.googleusercontent.com/-PQ1PMxuvV2M/UP8IuRv8peI/AAAAAAAAAVA/pG6cRYnGu6E/w506-h750/Instagram-logo.png">https://lh5.googleusercontent.com/-PQ1PMxuvV2M/UP8IuRv8peI/AAAAAAAAAVA/pG6cRYnGu6E/w506-h750/Instagram-logo.png</a>" width="100" height="100" title="Instagram-Logo" ></p>
+
+<h3>Ah, Apps</h3>
+
+
+<p>It's the end of week 4 and our assignment for the upcoming week is to complete and deploy our first application using Rails. We presented our ideas in class on Thursday, and I was so impressed. The entire class had a wide range of unique ideas from food-truck-tracking to making music even more enjoyable by turning it into a game. Honestly, it became even more evident how fortunate I am to be part of such an awesome group.</p>
+
+
+
+
+<p>My own application will deal with a particular interest of mine, <a href="https://en.wikipedia.org/wiki/Instagram">Instagram</a>, a social photo-sharing app launched back in October of 2010. I started using the app myself about a year ago, and I've really enjoyed the feedback I get from the community at large.</p>
+
+
+
+
+<p>The app will use both the Instagram API and possibly the google maps API. Essentially, what a user will do on the site is a search. It's going to enable a user to search for photos which fit into the category of 'nature' in any desired area. For instance, the user wants to see the natural elements around Tibet. They will search 'Tibet' and the search will go over to Tibet itself and fix the window onto the country's boundaries, then populate the map with images of nature (mountains, river, flowers, earth, etc).</p>
+
+
+
+
+<h3>Authentication</h3>
+
+
+<p>In order to retrieve data from the user and unlock the full features of the API, Instagram requires a <strong>client_id</strong> and an <strong>access_token</strong>. The way to pass this is to send the visitor to the authorization URL which prompts the user to authenticate the app. If granted access, the app's URL will then return the <strong>authentication_token</strong> in the redirect URL which is then grabbed and we're good to go. The URL looks like this:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'>https://api.instagram.com/oauth/authorize/?client_id=&#39;CLIENT-ID&#39;<span class="ni">&amp;amp;</span>redirect_uri=&#39;REDIRECT-URI&#39;<span class="ni">&amp;amp;</span>response_type=code
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>If succesfully authenticated, the URL will appear similarly to this:</p>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'>http://your-redirect-uri#access_token=11290717.f59def8.b3f3141e22b14e1da08a0c9313cc6c4d
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+</p>
+
+
+<p>I can tell it's going to be a really enjoyable project after looking at the API. I've always been interested in utilizing another application's interface to my own customization, it's just been too intimidating not having the knowledge or expertise to actually do it any justice. Also, I'm really looking forward to sharing the process and the end result with a class such as my own at General Assembly... and possibly others.</p>
+
+
+<p>Updates and walkthroughs to come!</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Active Record]]></title>
